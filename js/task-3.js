@@ -1,14 +1,23 @@
 
 'use strict';
 
-function getElementWidth(content, padding, border) {
+function filterArray(numbers, value) {
+ let newArray = [];
+    for (let i = 0; i < numbers.length; i++) {
+       
 
-    const x = Number.parseFloat(content);
-    const y = Number.parseFloat(padding);
-    const z = Number.parseFloat(border);
-    return (x + y * 2 + z * 2);
+        if (numbers[i] > value) {
+        
+   newArray.push(numbers[i]);
+    } 
+   
+    }
+return newArray
 }
 
-console.log(getElementWidth("50px", "8px", "4px"));
-console.log(getElementWidth("60px", "12px", "8.5px"));
-console.log(getElementWidth ("200px", "0px", "0px"));
+
+console.log(filterArray([1, 2, 3, 4, 5], 3)); 
+console.log(filterArray([1, 2, 3, 4, 5], 4)); 
+console.log(filterArray([1, 2, 3, 4, 5], 5)); 
+console.log(filterArray([12, 24, 8, 41, 76], 38)); 
+console.log(filterArray([12, 24, 8, 41, 76], 20)); 
